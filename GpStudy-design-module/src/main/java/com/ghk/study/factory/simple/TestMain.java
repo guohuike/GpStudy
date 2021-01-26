@@ -5,9 +5,12 @@ package com.ghk.study.factory.simple;
  */
 public class TestMain {
     public static void main(String[] args) {
-        CarBaseFunction car = SimpleCarFactory.getCar(BenZCar.class);
+        /*CarBaseFunction car = SimpleCarFactory.getCar(BenZCar.class);
         car.drive();
         CarBaseFunction car2 = SimpleCarFactory.getCar(BMWCar.class);
-        car2.drive();
+        car2.drive();*/
+
+        String match = "^[0-1]{1}$";
+        System.out.println("0".matches(match));
     }
 }
