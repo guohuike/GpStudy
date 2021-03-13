@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>GpStudy-design-module</module>
+        <module>Gpstudy-spring-module</module>
     </modules>
     <packaging>pom</packaging>
 
