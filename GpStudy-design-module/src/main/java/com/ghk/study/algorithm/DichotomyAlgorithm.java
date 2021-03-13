@@ -13,7 +13,7 @@ public class DichotomyAlgorithm {
         Arrays.sort(array);
         System.out.println(Arrays.toString(array));
         //System.out.println(dichotomy(array,66));
-        System.out.println(nearNum(array,33));
+        System.out.println(nearNum(array,55));
     }
 
     /**
