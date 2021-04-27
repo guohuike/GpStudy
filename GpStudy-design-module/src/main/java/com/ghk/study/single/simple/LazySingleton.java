@@ -8,7 +8,11 @@ import java.util.concurrent.locks.ReentrantLock;
  * @date 2021/1/22
  */
 public class LazySingleton {
-    public LazySingleton(){}
+    public LazySingleton(){
+        if(null != lazySingleton){
+            throw new RuntimeException("单例模式只允许存在一个对象!");
+        }
+    }
     private static LazySingleton lazySingleton;
 
     private static final Object lock = new Object();
