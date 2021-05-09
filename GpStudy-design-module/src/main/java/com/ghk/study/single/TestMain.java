@@ -4,6 +4,8 @@ import com.ghk.study.single.simple.HungrySimple;
 import com.ghk.study.single.simple.LazySingleton;
 import com.ghk.study.single.simple.StaticInnerClassSingle;
 
+import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -13,6 +15,9 @@ import java.util.concurrent.CountDownLatch;
  */
 public class TestMain {
     public static void main(String[] args) throws Exception{
+        ConcurrentHashMap<Object, Object> objectObjectConcurrentHashMap = new ConcurrentHashMap<>();
+        new HashMap<>();
+        objectObjectConcurrentHashMap.put("","");
         CountDownLatch countDownLatch = new CountDownLatch(1);
         for(int i = 0;i<20;i++){
             new Thread() {
