@@ -1,5 +1,6 @@
 package com.ghk.study.spring.entity;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
  * @date 2021/2/23
  */
 @Component
+@Scope(value = "prototype")
 public class SpringBeanAnno {
 
 }
