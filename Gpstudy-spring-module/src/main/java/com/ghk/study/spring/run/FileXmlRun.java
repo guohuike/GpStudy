@@ -13,5 +13,6 @@ public class FileXmlRun {
     public static void main(String[] args) {
         ApplicationContext applicationContext = new FileSystemXmlApplicationContext("classpath:application-context.xml");
         System.out.println(applicationContext.getBean(SpringBean.class));
+
     }
 }
