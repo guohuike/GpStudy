@@ -1,7 +1,6 @@
 package com.ghk.study.customspring.v1.servlet;
 
-import com.ghk.study.customspring.annotation.*;
-import org.springframework.stereotype.Service;
+import com.ghk.study.customspring.v2.servlet.annotation.*;
 import org.springframework.util.CollectionUtils;
 
 import javax.servlet.ServletConfig;
@@ -15,10 +14,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
-import java.text.MessageFormat;
 import java.util.*;
 
 /**
@@ -301,5 +298,9 @@ public class GpDispathServlet extends HttpServlet {
                 }
             }
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.println();
     }
 }

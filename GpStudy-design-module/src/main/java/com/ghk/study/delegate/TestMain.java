@@ -1,5 +1,9 @@
 package com.ghk.study.delegate;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * @Title: TestMain
  * @Package: com.ghk.study.delegate
@@ -11,9 +15,11 @@ package com.ghk.study.delegate;
  * <p>版权所有: Copyright1999-2021 leyou.com. All Rights Reserved</p >
  */
 public class TestMain {
-    public static void main(String[] args) {
-        Boss boss = new Boss();
+    public static void main(String[] args) throws Exception{
+        /*Boss boss = new Boss();
         boss.doDispatch("卖产品");
-        boss.doDispatch("编程");
+        boss.doDispatch("编程");*/
+
+
     }
 }

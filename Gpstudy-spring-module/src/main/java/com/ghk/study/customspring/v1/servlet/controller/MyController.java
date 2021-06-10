@@ -1,14 +1,18 @@
 package com.ghk.study.customspring.v1.servlet.controller;
 
-import com.ghk.study.customspring.annotation.GpAutowired;
-import com.ghk.study.customspring.annotation.GpController;
-import com.ghk.study.customspring.annotation.GpRequestMapping;
-import com.ghk.study.customspring.annotation.GpRequestParam;
+import com.ghk.study.customspring.v1.servlet.service.ServiceInterfacesss;
+import com.ghk.study.customspring.v2.servlet.annotation.GpAutowired;
+import com.ghk.study.customspring.v2.servlet.annotation.GpController;
+import com.ghk.study.customspring.v2.servlet.annotation.GpRequestMapping;
+import com.ghk.study.customspring.v2.servlet.annotation.GpRequestParam;
 import com.ghk.study.customspring.v1.servlet.service.MyService;
+import com.ghk.study.customspring.v2.servlet.mvc.GpModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @Title: MyController
@@ -24,18 +28,27 @@ import java.io.IOException;
 @GpRequestMapping("/custom")
 public class MyController {
     @GpAutowired
-    private MyService myService;
+    private ServiceInterfacesss myService;
 
 
     @GpRequestMapping("/testMvc")
-    public String testMvc(HttpServletRequest httpServletRequest,@GpRequestParam("age")String age,HttpServletResponse httpServletResponse,@GpRequestParam("name")String name){
+    public GpModelAndView testMvc(HttpServletRequest httpServletRequest, @GpRequestParam("age")Integer age, HttpServletResponse httpServletResponse, @GpRequestParam("name")String name){
         System.out.println(myService.getMyServiceStr());
-        try {
-            httpServletResponse.getWriter().write("parameter is:"+name+"age:"+age);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return "SUCCESS";
+        Map<String, Object> model = new HashMap<>();
+        model.put("age",age);
+        model.put("name",name);
+        GpModelAndView gpModelAndView = new GpModelAndView("0",model);
+        return gpModelAndView;
+    }
+
+    @GpRequestMapping("/testMvcThrows")
+    public GpModelAndView testMvcThrows(HttpServletRequest httpServletRequest, @GpRequestParam("age")Integer age, HttpServletResponse httpServletResponse, @GpRequestParam("name")String name){
+        myService.getMyServiceThrows();
+        Map<String, Object> model = new HashMap<>();
+        model.put("age",age);
+        model.put("name",name);
+        GpModelAndView gpModelAndView = new GpModelAndView("0",model);
+        return gpModelAndView;
     }
 
 
